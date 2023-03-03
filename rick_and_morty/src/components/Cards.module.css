@@ -1,0 +1,15 @@
+.divCards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 80vh;
+    /* background: conic-gradient(at 0% 30%, green 10%, #D1F2EB 30%, #1e90ff 50%); */
+}
+.divOption{
+    transform: scale(0.8);
+}
+.divOption:hover{
+    transform: scale(0.9);
+}

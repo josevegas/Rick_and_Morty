@@ -1,0 +1,13 @@
+.divCard{
+    height: 90%;;
+    padding: 1em;
+    margin: 5px;
+    font-weight: 500;
+    border-radius: 5%;
+    background-color: #fcff4f;
+}
+.divCard:hover{
+    background-color: #262623c9;
+    color: white;
+    border: 2px solid white;
+}
