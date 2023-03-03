@@ -17,6 +17,7 @@
     flex-direction: row;
     justify-content: center;
     font-family: cursive;
+    border: none;
 }
 .close{
     display: flex;
