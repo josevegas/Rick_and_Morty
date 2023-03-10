@@ -2,19 +2,12 @@ import './App.css'
 import {useState, useEffect} from 'react';
 import Cards from './components/Cards.jsx'
 import Nav from './components/Nav.jsx'
-// import characters, { Rick } from './data.js'
 
 function App () {
   const [characters, setCharacters]=useState([]);
   // useEffect(()=>{
 
   // })
-  const example = {
-    name: 'Morty Smith',
-    species: 'Human',
-    gender: 'Male',
-    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-  };
   const onSearch=(character)=>{
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
@@ -26,15 +19,27 @@ function App () {
          }
       });
   }
+  function onRandom(){
+    let id=Math.ceil(Math.random()*825)
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    .then((response)=>response.json())
+    .then((data) =>{
+      if (characters.filter((char)=>char.id===data.id).length===0) {
+          setCharacters((oldChars) => [...oldChars, data]);
+          console.log('random card')
+        }else{console.log('falló')}
+      }
+    )
+  }
   const onClose=(id)=>{
-    const filtered=characters.filter((char)=>char.id!=Number(id))
+    const filtered=characters.filter((char)=>char.id!==Number(id))
     setCharacters(filtered);
   }
   
   return (
     <div className='App' style={{ padding: '25px' }}>
       <div>
-        <Nav onSearch={onSearch}/>
+        <Nav onSearch={onSearch} onRandom={onRandom}/>
       </div>
       <hr />
       <div>
