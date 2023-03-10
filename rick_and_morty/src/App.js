@@ -2,6 +2,7 @@ import './App.css'
 import {useState, useEffect} from 'react';
 import Cards from './components/Cards.jsx'
 import Nav from './components/Nav.jsx'
+import {Route,Routes} from 'react-router-dom';
 
 function App () {
   const [characters, setCharacters]=useState([]);
