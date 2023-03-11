@@ -1,7 +1,9 @@
 import './App.css'
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import Cards from './components/Cards.jsx'
-import Nav from './components/Nav.jsx'
+import NavBar from './components/NavBar.jsx'
+import About from './components/About.jsx'
+import Detail from './components/Detail';
 import {Route,Routes} from 'react-router-dom';
 
 function App () {
@@ -36,18 +38,15 @@ function App () {
     const filtered=characters.filter((char)=>char.id!==Number(id))
     setCharacters(filtered);
   }
-  
+  console.log('no me carga')
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div>
-        <Nav onSearch={onSearch} onRandom={onRandom}/>
-      </div>
-      <hr />
-      <div>
-        <Cards characters={characters} onClose={onClose}/>
-      </div>
-      <hr />
-      
+      <NavBar onSearch={onSearch} onRandom={onRandom}/>
+      <Routes>
+        <Route path="/" element={<Cards characters={characters} onClose={onClose}/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:detailId" element={<Detail />} /> 
+      </Routes>
     </div>
   )
 }

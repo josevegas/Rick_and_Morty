@@ -1,5 +1,7 @@
 import style from './Style.module.css';
-export default function Card({name,species,gender,image,onClose}) {
+import {NavLink} from 'react-router-dom';
+
+export default function Card({name,species,gender,image,onClose,id}) {
    console.log(onClose)
    return (
       <div className={style.divContent}>
@@ -8,7 +10,7 @@ export default function Card({name,species,gender,image,onClose}) {
                <button onClick={onClose} className={style.closeButton}><b> X </b></button>
             </div>
             <img  src={image} alt="Card" className={style.charImage}/>
-            <h2 className={style.divName}>{name}</h2>
+            <NavLink to={`/detail/${id}`}><h2 className={style.divName}>{name}</h2></NavLink>
             <div className={style.divInformation}>
                <h2>{species}</h2>
                <h2>{gender}</h2>
