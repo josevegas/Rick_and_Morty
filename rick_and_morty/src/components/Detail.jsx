@@ -1,9 +1,10 @@
 import style from './Style.module.css'
 import {useState,useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams,useNavigate} from 'react-router-dom'
 
 export default function Detail(props){
     const {id}=useParams();
+    const navigate=useNavigate();
     const [character,setCharacter]=useState({});
     console.log(id);
     useEffect(() => {
@@ -21,9 +22,22 @@ export default function Detail(props){
           });
         return setCharacter({});
     }, [id]);
+    const backhome=()=>{navigate('/')};
     return(
-        <div className={style.divSearching}>
-            Aquí se renderiza los detalles de carta {character.name}.
+        <div className={style.divDetail}>
+            <div className={style.divData}>
+                <h1>Nombre: {character.name}</h1>
+                <h3>Status: {character.status}</h3>
+                <h3>Especie: {character.species}</h3>
+                <h3>Género: {character.gender}</h3>
+                <h3>Origen: {character.origin?.name}</h3>
+            </div>
+            <img src={character.image} alt={character.name} className={style.divImage}/>
+            
+            <div className={style.divNav}>
+                <div className={style.divSearching}><button onClick={backhome} className={style.buttonSearching}>Volver</button></div>
+            </div>
         </div>
+        
     )
 }

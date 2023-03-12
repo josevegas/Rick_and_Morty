@@ -44,7 +44,7 @@ function App () {
       <Routes>
         <Route path="/" element={<Cards characters={characters} onClose={onClose}/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/detail/:detailId" element={<Detail characters={characters}/>} /> 
+        <Route path="/detail/:id" element={<Detail characters={characters}/>} /> 
       </Routes>
     </div>
   )
