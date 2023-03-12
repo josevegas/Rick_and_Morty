@@ -4,7 +4,7 @@ import style from './Style.module.css';
 import {NavLink} from 'react-router-dom';
 
 export default function NavBar(props){
-    console.log('no aparece')
+    
     return(
         <div className={style.divNav}>
             <div className={style.divSearching}><NavLink to='/'>Home</NavLink></div>

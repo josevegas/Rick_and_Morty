@@ -29,7 +29,6 @@ function App () {
     .then((data) =>{
       if (characters.filter((char)=>char.id===data.id).length===0) {
           setCharacters((oldChars) => [...oldChars, data]);
-          console.log('random card')
         }else{console.log('falló')}
       }
     )
@@ -38,14 +37,14 @@ function App () {
     const filtered=characters.filter((char)=>char.id!==Number(id))
     setCharacters(filtered);
   }
-  console.log('no me carga')
+  
   return (
     <div className='App' style={{ padding: '25px' }}>
       <NavBar onSearch={onSearch} onRandom={onRandom}/>
       <Routes>
         <Route path="/" element={<Cards characters={characters} onClose={onClose}/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/detail/:detailId" element={<Detail />} /> 
+        <Route path="/detail/:detailId" element={<Detail characters={characters}/>} /> 
       </Routes>
     </div>
   )
