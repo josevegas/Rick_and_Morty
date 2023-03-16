@@ -7,10 +7,11 @@ export default function NavBar(props){
     
     return(
         <div className={style.divNav}>
-            <div className={style.divSearching}><NavLink to='/'>Home</NavLink></div>
+            <div className={style.divSearching}><NavLink to='/home'>Home</NavLink></div>
             <div className={style.divSearching}><NavLink to='/about'>About</NavLink></div>
             <SearchBar onSearch={(characterID) =>props.onSearch(characterID)} />
             <RandomButton onRandom={()=>props.onRandom()} />
+            <div className={style.divSearching}><NavLink to='/'>Close</NavLink></div>
         </div>
     )
 }

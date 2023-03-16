@@ -22,7 +22,7 @@ export default function Detail(props){
           });
         return setCharacter({});
     }, [id]);
-    const backhome=()=>{navigate('/')};
+    const backhome=()=>{navigate('/home')};
     return(
         <div className={style.divDetail}>
             <div className={style.divData}>
