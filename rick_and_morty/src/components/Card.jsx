@@ -2,7 +2,6 @@ import style from './Style.module.css';
 import {NavLink} from 'react-router-dom';
 
 export default function Card({name,species,gender,image,onClose,id}) {
-   console.log(id)
    return (
       <div className={style.divContent}>
          <div className={style.divCard}>
