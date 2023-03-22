@@ -20,16 +20,29 @@
     font-family: cursive;
     border: none;
 }
+.divTop{
+    display: flex;
+    flex-direction: space-evenly;
+
+}
 .close{
     display: flex;
     flex-direction: row;
     justify-content: right;
     margin: 5px 5px 10px 5px;
+    flex-grow: 1;
 }
 .closeButton{
     background-color: red;
     color: white;
     border-radius:50%;
+}
+.fav{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 5px 5px 10px 5px;
+    flex-grow: 1;
 }
 .divIdentity{
     display: flex;

@@ -1,5 +1,5 @@
 import style from './Style.module.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 export default function SearchBar(props) {
    const [character,setCharacter]=useState("");
