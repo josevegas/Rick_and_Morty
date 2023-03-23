@@ -44,6 +44,11 @@
     margin: 5px 5px 10px 5px;
     flex-grow: 1;
 }
+.favButton{
+    background-color: #fcff4fc9;
+    border: none;
+    padding: o;
+}
 .divIdentity{
     display: flex;
     flex-direction: column;

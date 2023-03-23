@@ -1,10 +1,10 @@
 import { ADD_MY_FAVORITE,DELETE_MY_FAVORITE } from "./type";
 
-const innitialState={
+const initialState={
     myFavorites:[],
 }
 
-const rootReducer=(state=innitialState,{type,payload})=>{
+const rootReducer=(state=initialState,{type,payload})=>{
     switch(type){
         case ADD_MY_FAVORITE:
             return{

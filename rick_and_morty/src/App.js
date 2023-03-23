@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.jsx'
 import About from './components/About.jsx'
 import Detail from './components/Detail'
 import Form from './components/Form'
+import Favorites from './components/Favorites'
 import {Route,Routes,useLocation,useNavigate} from 'react-router-dom';
 
 function App () {
@@ -59,6 +60,7 @@ function App () {
         <Route path="/" element={<Form login={login}/>} />
         <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites/>}/>
         <Route path="/detail/:id" element={<Detail characters={characters}/>} /> 
       </Routes>
     </div>
