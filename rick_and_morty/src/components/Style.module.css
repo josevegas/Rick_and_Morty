@@ -207,3 +207,7 @@
     box-shadow: 1px 1px 10px 10px #fcff4fc9;
     margin-top: 20px;
 }
+.error{
+    color: red;
+    font-size: 10px;
+}

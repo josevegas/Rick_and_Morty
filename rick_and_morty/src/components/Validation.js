@@ -1,7 +1,7 @@
-const regexEmail=/^[a-z0-9]+@[a-z0-9.-]+\.[a-z]{2-4}$/i;
+const regexEmail=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const regexPassword=new RegExp(/(?=(.*[0-9]))(?=(.*[a-z]))(?=(.*[A-Z])).{6,10}/);
 export const validation=(inputs)=>{
-    const errors={}
+    const errors={};
     if(!regexEmail.test(inputs.userName)){
         errors.userName="Debe ser un email";
     }
