@@ -7,6 +7,10 @@ export function Favorites({myFavorites}){
     const navigate=useNavigate();
     const backhome=()=>{navigate('/home')};
     return (<div className={style.divCards}>
+        <div className={style.divNav}>
+            <div className={style.divSearching}><button onClick={backhome} className={style.buttonSearching}>Volver</button></div>
+        </div>
+        <br />
         {
             myFavorites?.map(({id,name,gender,image,species})=>{
             
@@ -20,9 +24,6 @@ export function Favorites({myFavorites}){
                 </div>)
           })
         }
-        <div className={style.divNav}>
-            <div className={style.divSearching}><button onClick={backhome} className={style.buttonSearching}>Volver</button></div>
-        </div>
     </div>)
 }
 
