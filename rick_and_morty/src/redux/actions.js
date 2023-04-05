@@ -1,4 +1,4 @@
-import { ADD_MY_FAVORITE,DELETE_MY_FAVORITE } from "./type";
+import { ADD_MY_FAVORITE,DELETE_MY_FAVORITE,FILTER,ORDER} from "./type";
 
 const addMyFavorite=(character)=>{
     return{
@@ -12,5 +12,17 @@ const deleteMyFavorite=(value)=>{
         payload: value,
     }
 }
+const filterCards=(status)=>{
+    return{
+        type: FILTER,
+        payload: status,
+    }
+}
+const orderCards=(order)=>{
+    return{
+        type: ORDER,
+        payload: order,
+    }
+}
 
-export {addMyFavorite,deleteMyFavorite}
+export {addMyFavorite,deleteMyFavorite,filterCards,orderCards}

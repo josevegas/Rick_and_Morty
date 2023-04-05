@@ -1,7 +1,8 @@
-import { ADD_MY_FAVORITE,DELETE_MY_FAVORITE } from "./type";
+import { ADD_MY_FAVORITE,DELETE_MY_FAVORITE,FILTER,ORDER } from "./type";
 
 const initialState={
     myFavorites:[],
+    allCharacters:[],
 }
 
 const rootReducer=(state=initialState,{type,payload})=>{
@@ -9,14 +10,35 @@ const rootReducer=(state=initialState,{type,payload})=>{
         case ADD_MY_FAVORITE:
             return{
                 ...state,
-                myFavorites:[...state.myFavorites,payload],
+                allCharacters:[...state.allCharacters,payload],
+                myFavorites:[...state.allCharacters,payload],
             };
         case DELETE_MY_FAVORITE:
-            let favFilter=state.myFavorites.filter(element=>element.id!==payload)
+            let favFilter=state.allCharacters.filter(element=>element.id!==payload)
             return{
                 ...state,
                 myFavorites:favFilter,
+                allCharacters:favFilter,
             };
+        case FILTER:
+            let cardsFilter
+            if(payload==='All'){cardsFilter=[...state.allCharacters]}else{cardsFilter=[...state.allCharacters].filter(element=>element.gender===payload)}
+            return{
+                ...state,
+                myFavorites:cardsFilter,
+            }
+        case ORDER:
+            let favOrder=[...state.allCharacters].sort((a,b)=>{
+                if(a.id>b.id){
+                    return payload==="Ascendente"? 1: -1
+                }else{
+                    return payload==="Descendente"? 1: -1
+                }
+            })
+            return{
+                ...state,
+                myFavorites:favOrder,
+            }
         default:
             return {...state};
     }
