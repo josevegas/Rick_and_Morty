@@ -185,10 +185,15 @@
     justify-content: space-evenly;
     border-radius: 10px;
     background-color: #fcff4fc9;
-    margin: 10px;
+    margin-top: 10px;
     padding: 10px;
     font-size: 20px;
     font-family: cursive;
+}
+.divError{
+    border-radius: 10px;
+    background-color: #fcff4fc9;
+    margin: 0px;
 }
 .input{
     border-radius: 10px;
@@ -209,5 +214,6 @@
 }
 .error{
     color: red;
-    font-size: 10px;
+    font-size: 12px;
+    font-family: cursive;
 }

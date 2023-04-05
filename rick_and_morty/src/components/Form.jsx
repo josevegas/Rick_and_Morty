@@ -36,16 +36,18 @@ export default function Form(props){
   return(
     <form className={style.contentForm} onSubmit={handleSubmit}>
         <div className={style.divInput}>
-            <label htmlFor="" className={style.labelForm}>Usuario:</label>
-            <input type="text" name="userName" value={userData.userName} onChange={handleChange} className={errors.userName&&style.input}/>
-            <br />
-            {errors.userName? <p className={style.error}>{errors.userName}</p>: null}
+          <label htmlFor="" className={style.labelForm}>Usuario:</label>
+          <input type="text" name="userName" value={userData.userName} onChange={handleChange} className={errors.userName&&style.input}/>
+        </div>
+        <div className={style.divError}>
+          {errors.userName? <p className={style.error}>{errors.userName}</p>: null}
         </div>
         <div className={style.divInput}>
-            <label htmlFor="" className={style.labelForm}>Contraseña:</label>
-            <input type="password" name="password" value={userData.password} onChange={handleChange} className={errors.password&&style.input}/>
-            <br />
-            {errors.password? <p className={style.error}>{errors.password}</p>: null}
+        <label htmlFor="" className={style.labelForm}>Contraseña:</label>
+        <input type="password" name="password" value={userData.password} onChange={handleChange} className={errors.password&&style.input}/>
+        </div>
+        <div className={style.divError}>
+          {errors.password? <p className={style.error}>{errors.password}</p>: null}
         </div>
         <button type="submit" className={style.buttonForm}>Ingresar</button>
     </form>
