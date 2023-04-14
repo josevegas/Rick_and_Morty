@@ -1,5 +1,4 @@
 const users=require('users');
-const express=require('express')
 
 const login=(req,res)=>{
     const {userName,password}=req.query;
