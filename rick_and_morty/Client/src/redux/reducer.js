@@ -10,15 +10,15 @@ const rootReducer=(state=initialState,{type,payload})=>{
         case ADD_MY_FAVORITE:
             return{
                 ...state,
-                allCharacters:[...state.allCharacters,payload],
-                myFavorites:[...state.allCharacters,payload],
+                allCharacters:payload,
+                myFavorites:payload,
             };
         case DELETE_MY_FAVORITE:
-            let favFilter=state.allCharacters.filter(element=>element.id!==payload)
+            // let favFilter=state.allCharacters.filter(element=>element.id!==payload)
             return{
                 ...state,
-                myFavorites:favFilter,
-                allCharacters:favFilter,
+                myFavorites:payload,
+                allCharacters:payload,
             };
         case FILTER:
             let cardsFilter

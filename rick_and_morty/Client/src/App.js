@@ -42,14 +42,23 @@ function App () {
     const filtered=characters.filter((char)=>char.id!==Number(id))
     setCharacters(filtered);
   }
-  const login=(userData)=>{
-    console.log(userData)
-    if(userData.userName===userName&&userData.password===password){
-      console.log('si son')
-      setAccess(true);
-      navigate('/home')
-    }
-  }
+  // const login=(userData)=>{
+  //   console.log(userData)
+  //   if(userData.userName===userName&&userData.password===password){
+  //     console.log('si son')
+  //     setAccess(true);
+  //     navigate('/home')
+  //   }
+  // }
+  function login(userData) {
+    const { userName, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?userName=${userName}&password=${password}`).then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home');
+    });
+ }
   useEffect(()=>{
     !access&&navigate('/');
   },[access,navigate]);

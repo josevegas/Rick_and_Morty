@@ -14,7 +14,8 @@ const getCharById=(req,res)=>{
             }
         })
     .catch(error=>{
-        res.status(500).json(error.message)
+        console.log(error)
+        res.status(500).json({message:error.message})
     })
 }
 
