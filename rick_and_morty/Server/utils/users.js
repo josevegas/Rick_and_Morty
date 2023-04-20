@@ -1,4 +1,4 @@
 require('dotenv').config();
 const {PASSWORD}=process.env;
-const users=[{userName:'josevegas@gmail.com',password:'Jlvm2612'}];
+const users=[{userName:'josevegas@gmail.com',password:PASSWORD}];
 module.exports=users;
