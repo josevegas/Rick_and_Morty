@@ -1,4 +1,4 @@
-const users=require('users');
+const users=require('../utils/users.js');
 
 const login=(req,res)=>{
     const {userName,password}=req.query;

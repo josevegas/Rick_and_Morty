@@ -7,6 +7,7 @@ import Detail from './components/Detail'
 import Form from './components/Form'
 import Favorites from './components/Favorites'
 import {Route,Routes,useLocation,useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
 function App () {
   const [characters, setCharacters]=useState([]);

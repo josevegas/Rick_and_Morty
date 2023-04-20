@@ -16,7 +16,7 @@ const addMyFavorite = (character) => {
         });
     };
  };
-const deleteMyFavorite=(value)=>{
+const deleteMyFavorite=(id)=>{
     // return{
     //     type: DELETE_MY_FAVORITE,
     //     payload: value,

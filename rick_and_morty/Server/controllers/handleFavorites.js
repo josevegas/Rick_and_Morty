@@ -1,6 +1,3 @@
-const bodyParser=require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-
 let myFavorites=[];
 const postFav=(req,res)=>{
     myFavorites=req.body;
