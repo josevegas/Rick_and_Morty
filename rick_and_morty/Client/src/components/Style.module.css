@@ -45,7 +45,7 @@
     flex-grow: 1;
 }
 .favButton{
-    background-color: #fcff4fc9;
+    background-color: transparent;
     border: none;
     padding: o;
 }

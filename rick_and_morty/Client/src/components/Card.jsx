@@ -2,7 +2,10 @@ import style from './Style.module.css';
 import {NavLink} from 'react-router-dom';
 import { addMyFavorite,deleteMyFavorite} from '../redux/actions';
 import { connect } from 'react-redux';
-import {useState,useEffect} from 'react'
+import {useState,useEffect} from 'react';
+import heartsolid from '../image/heartsolid.svg';
+import heart from '../image/heart.svg';
+import trash from '../image/trash.svg';
 
 
 export function Card({name,species,gender,image,onClose,id,addMyFavorite,deleteMyFavorite,myFavorites}) {
@@ -30,14 +33,14 @@ export function Card({name,species,gender,image,onClose,id,addMyFavorite,deleteM
             <div className={style.fav}>
                {
                   isFav ? (
-                     <button className={style.favButton} onClick={handleFavorite}>❤️</button>
+                     <button className={style.favButton} onClick={handleFavorite}><img src={heartsolid} /></button>
                   ) : (
-                     <button className={style.favButton} onClick={handleFavorite}>🤍</button>
+                     <button className={style.favButton} onClick={handleFavorite}><img src={heart} /></button>
                   )
                }
             </div>
             <div className={style.close}>
-               {isFav?null:(<button onClick={onClose} className={style.closeButton}><b> X </b></button>)}
+               {isFav?null:(<button onClick={onClose} className={style.favButton}><img src={trash} /></button>)}
             </div>
             </div>
             <img  src={image} alt="Card" className={style.charImage}/>
